@@ -79,7 +79,7 @@ Every product is **open source**. Inspect the architecture, raise issues, and bu
 
 ## Direct Technical Support
 
-**Paul Isaacs** — Founder & CTO
+**Paul Isaac's** — Founder & CTO
 
 > MSc (Distinction) Intelligent Systems & Robotics · 20+ years software engineering · 15+ years AI including neuromorphic systems, robotics, and distributed platforms · TEDx speaker · PhD research in cognitive AI and type-n security
 
