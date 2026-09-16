@@ -2,7 +2,7 @@
 
 # NeuralMimicry
 
-**Open-source neuromorphic AI · Governed delivery · Sovereign operations · Adaptive resilience**
+**Open-source neuromorphic AI · AI governance · Governed delivery · Sovereign operations · Adaptive resilience**
 
 *UK independent platform engineering — Rugby, Warwickshire*
 
@@ -22,16 +22,40 @@
 
 ## What We Build
 
-NeuralMimicry develops a suite of open-source tools for teams that need AI to be **governed, inspectable, and sovereign** — not another black-box service dependency. The platform spans four capability areas:
+NeuralMimicry develops a suite of open-source tools for teams that need AI to be **governed, inspectable, and sovereign** — not another black-box service dependency. The platform spans five capability areas:
 
 | Route | Lead product | What it does |
 |---|---|---|
+| **AI governance** | [Aria](https://github.com/neuralmimicry/aria) with [Gail](https://github.com/neuralmimicry/gail) | Request and response risk assessment, operator oversight, alerts and policy enforcement on configured AI traffic |
 | **Governed delivery** | [Refiner](https://github.com/neuralmimicry/rag_demo) | LLM workflow engine, RAG, agentic delivery pipelines, Jira/Confluence analysis, project solver |
 | **Sovereign operations** | [Continuum — NMC](https://github.com/neuralmimicry/nmc) | Kubernetes, vcluster, VM, node recruitment, Tracey fleet control |
 | **Adaptive resilience** | [Tracey](https://github.com/neuralmimicry/tracey) | Swarm security runtime, fuzzy inference scoring, multi-agent governance |
 | **Neuromorphic intelligence** | [AARNN](https://github.com/neuralmimicry/aarnn) · [aarnn\_rust](https://github.com/neuralmimicry/aarnn_rust) | Biologically-inspired AI with continuous learning and morphological adaptation |
 
 Every product is **open source**. Inspect the architecture, raise issues, and build confidence before any commercial engagement.
+
+---
+
+## AI Governance with Aria
+
+**Aria — Automated Regulation & Integrity Arbiter** governs AI requests and responses passing through **Gail**, NeuralMimicry’s shared gateway to AI providers and libraries. It helps teams identify concerning content, review incidents and apply policy at the point of use.
+
+### How it works
+
+1. **Assess the request.** Gail sends configured traffic to Aria before the original model call. Rules and contextual AI assessment look for risks such as instruction overrides, exposed credentials, destructive commands and harmful instructions.
+2. **Apply policy.** Aria returns an **allow**, **alert** or **block** decision. In enforcement mode, Gail stops blocked requests before model execution.
+3. **Assess the response.** Gail submits the output for assessment before release and withholds blocked responses in enforcement mode.
+4. **Keep an operational record.** Decisions, policy revisions and operator actions remain available for review. Signed webhook alerts and Prometheus metrics connect governance to operational monitoring.
+
+Aria’s AI assessment uses **Gail’s existing configured providers**. A restricted assessment route prevents recursive checks; a versioned HTTP contract keeps the services separate without either project importing the other.
+
+The **operator dashboard** supports incident review and acknowledgement, threshold changes, source blocking and pauses on governed traffic. Authorised viewers and operators can inspect Gail’s actual governance mode and outage behaviour, with product navigation connecting Aria to the wider NeuralMimicry estate.
+
+**Start with monitoring, then enable enforcement.** Monitoring records concerns without applying content blocks or pauses. Enforcement applies those controls; configurable fail-closed behaviour can stop affected traffic when assessment is unavailable. Pauses take effect at evaluation boundaries and do not undo completed actions.
+
+Coverage depends on configured Gail routes. Streamed responses are buffered within limits before assessment and release; opaque media may be marked uninspectable. Aria retains content hashes and structured findings rather than raw prompts and responses, while assessment still processes content through Gail’s providers. It identifies risk without establishing malicious intent or guaranteeing detection, and does not certify regulatory compliance.
+
+**Explore:** [Aria repository and setup](https://github.com/neuralmimicry/aria) · [Operational guidance](https://github.com/neuralmimicry/aria/blob/main/docs/operations.md) · [Gail integration](https://github.com/neuralmimicry/gail/blob/main/docs/aria.md) · [Discuss your use case](https://neuralmimicry.ai/contact)
 
 ---
 
@@ -42,7 +66,8 @@ Every product is **open source**. Inspect the architecture, raise issues, and bu
 | Repository | Language | Description |
 |---|---|---|
 | [**rag\_demo**](https://github.com/neuralmimicry/rag_demo) — Refiner | Python | LLM workflow engine and public API gateway: RAG, MCP, agentic delivery, Jira/Confluence analysis, multi-provider AI orchestration |
-| [**gail**](https://github.com/neuralmimicry/gail) | Rust | Shared AI middleware: multi-provider LLM routing, neuromorphic access, AER translation, continuous fine-tuning, autonomous trading bridge |
+| [**gail**](https://github.com/neuralmimicry/gail) | Rust | Shared AI middleware: multi-provider LLM routing, neuromorphic access, AER translation, continuous fine-tuning, autonomous trading bridge; integrates Aria checks on configured AI request and response paths |
+| [**aria**](https://github.com/neuralmimicry/aria) | Rust | AI governance through Gail: rules and contextual assessment, policy controls, incident dashboard, audit records and alerts |
 | [**conductor**](https://github.com/neuralmimicry/conductor) | Rust | Estate control-plane: topology discovery, evidence-backed findings, governed work-item queue, staged delivery pipeline |
 | [**nmc**](https://github.com/neuralmimicry/nmc) | C++ | Kubernetes/vcluster operator CLI and HTTP control plane with Tracey fleet management and provider portal orchestration |
 | [**tracey**](https://github.com/neuralmimicry/tracey) | Rust | Swarm anomaly/security runtime: fuzzy scoring, multi-agent consensus, TraceyGuard/TraceyBan, fleet telemetry |
@@ -87,7 +112,7 @@ Paul is available for direct, hands-on technical support across the full platfor
 
 **£1,000 per day + VAT** — on-site (UK) or remote · minimum one day
 
-Covers Refiner, Gail, Continuum, Tracey, AARNN, and the full open-source deployment stack.
+Covers Refiner, Gail, Aria, Continuum, Tracey, AARNN, and the full open-source deployment stack.
 
 **→ [Enquire: info@neuralmimicry.ai](mailto:info@neuralmimicry.ai?subject=Direct%20Technical%20Support%20Enquiry)**
 
