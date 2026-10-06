@@ -30,9 +30,15 @@ NeuralMimicry develops a suite of open-source tools for teams that need AI to be
 | **Governed delivery** | [Refiner](https://github.com/neuralmimicry/rag_demo) | LLM workflow engine, RAG, agentic delivery pipelines, Jira/Confluence analysis, project solver |
 | **Sovereign operations** | [Continuum — NMC](https://github.com/neuralmimicry/nmc) | Kubernetes, vcluster, VM, node recruitment, Tracey fleet control |
 | **Adaptive resilience** | [Tracey](https://github.com/neuralmimicry/tracey) | Swarm security runtime, fuzzy inference scoring, multi-agent governance |
-| **Neuromorphic intelligence** | [AARNN](https://github.com/neuralmimicry/aarnn) · [aarnn\_rust](https://github.com/neuralmimicry/aarnn_rust) | Biologically-inspired AI with continuous learning and morphological adaptation |
+| **Neuromorphic intelligence** | [AARNN](https://github.com/neuralmimicry/aarnn) · [aarnn\_rust](https://github.com/neuralmimicry/aarnn_rust) · [Evelyn](https://github.com/neuralmimicry/evelyn) | Neuromorphic network research, AARNN platform and an LLM runtime under staged AARNN integration |
 
 Every product is **open source**. Inspect the architecture, raise issues, and build confidence before any commercial engagement.
+
+### Current engineering update · 6 October 2026
+
+Evelyn's Stage 4c test passed with Qwen 3 8B feed-forward layers served by AARNN neuron meshes across two on-prem hosts. The best passing multi-host setup measured 1.311 seconds per token on a 64-token check, with a 3.755% perplexity increase and no dense fallbacks. Dense inference measured 0.642 seconds per token, so this is a quality-validated distributed research result, not a speed advantage over dense inference.
+
+Stage 5 is extending the runtime to Qwen3.5 9B. Dense output matches llama.cpp for 32 generated tokens, and two analog mesh calibration checks are below the 5% error gate. Execution of those meshes by AARNN, governed shadow chats and regression checks are still in progress. Follow the [Evelyn architecture and stage gates](https://github.com/neuralmimicry/evelyn/blob/main/docs/ARCHITECTURE.md) and the [AARNN project](https://github.com/neuralmimicry/aarnn_rust).
 
 ---
 
@@ -86,7 +92,7 @@ Coverage depends on configured Gail routes. Streamed responses are buffered with
 |---|---|---|
 | [**aarnn**](https://github.com/neuralmimicry/aarnn) | C++ | Autonomic Asynchronous Recursive Neuromorphic Network — oscillatory networks, PostgreSQL persistence, VTK visualisation |
 | [**aarnn\_rust**](https://github.com/neuralmimicry/aarnn_rust) | Rust | Full neuromorphic autonomous AI platform: GPU kernels, Kubernetes operator, training pipelines, embodied simulation |
-| [**neuromorphic\_demo**](https://github.com/neuralmimicry/neuromorphic_demo) | Rust | Interactive SNN demo: live inputs, dynamic 3D growth, morphology-inspired AARNN dynamics |
+| [**evelyn**](https://github.com/neuralmimicry/evelyn) | Rust | Transformer runtime that routes feed-forward knowledge through AARNN neuron populations; staged Qwen model support |
 | [**aarnn-nsys**](https://github.com/neuralmimicry/aarnn-nsys) | Rust | Ultra-low-latency zero-allocation pub/sub message bus for neuromorphic and real-time systems, incl. bare-metal `no_std` |
 | [**feel-bridge**](https://github.com/neuralmimicry/feel-bridge) | Verilog | Hybrid analog–analog reservoir computing: GPU firmware physics and memristive neuron dynamics on FPGA |
 
@@ -98,7 +104,8 @@ Coverage depends on configured Gail routes. Streamed responses are buffered with
 | [**aarnn-network**](https://github.com/neuralmimicry/aarnn-network) | HCL | Infrastructure-as-Code for building and deploying containerised AARNN and Aeron workloads |
 | [**raspi-bare-metal**](https://github.com/neuralmimicry/raspi-bare-metal) | Rust | Bare-metal AArch64 demo of aarnn-nsys on Raspberry Pi 4 — no OS, no allocator |
 | [**oshift**](https://github.com/neuralmimicry/oshift) | HCL | Zero Touch Provisioning pipeline for AI/HPC workloads on Red Hat OpenShift |
-| [**jirastats**](https://github.com/neuralmimicry/jirastats) | Python | Lightweight Jira reporting toolkit: discovery-driven JQL refinement, throughput analysis, LLM-backed insights |
+
+Repositories not listed as maintained products here may remain available for historical reference; check each repository's status and release activity before adopting it.
 
 ---
 
